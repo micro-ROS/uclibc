@@ -222,7 +222,15 @@ if [ ! -f "${nuttx_path}/Makefile" ]; then
   exit 1
 fi
 
-libxx_srcdir=${nuttx_path}/libxx
+libs_path=${nuttx_path}/libs
+
+if [ ! -d "${libs_path}" ]; then
+  echo "ERROR: Directory ${libs_path} does not exist"
+  echo $usage
+  exit 1
+fi
+
+libxx_srcdir=${libs_path}/libxx
 
 if [ ! -d "${libxx_srcdir}" ]; then
   echo "ERROR: Directory ${libxx_srcdir} does not exist"
@@ -314,7 +322,7 @@ echo "Installing uClibc++ in the NuttX source tree"
 filelist=`find libxx -type f`
 
 for file in $filelist; do
-  install -D $file ${nuttx_path}/${file}
+  install -D $file ${libs_path}/${file}
 done
 
 filelist=`find include -type f`
@@ -323,5 +331,5 @@ for file in $filelist; do
   install -D $file ${nuttx_path}/${file}
 done
 
-echo "Installation suceeded"
+echo "Installation succeeded"
 echo ""
