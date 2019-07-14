@@ -47,7 +47,6 @@ namespace std{
 	template _UCXXEXPORT void vector<unsigned long int, allocator<unsigned long int> >::reserve(size_type n);
 	template _UCXXEXPORT void vector<float, allocator<float> >::reserve(size_type n);
 	template _UCXXEXPORT void vector<double, allocator<double> >::reserve(size_type n);
-	template _UCXXEXPORT void vector<bool, allocator<bool> >::reserve(size_type n);
 
 	template _UCXXEXPORT void vector<char, allocator<char> >::resize(size_type sz, const char & c);
 	template _UCXXEXPORT void vector<unsigned char, allocator<unsigned char> >::resize(size_type sz, const unsigned char & c);
@@ -61,7 +60,6 @@ namespace std{
 		resize(size_type sz, const unsigned long int & c);
 	template _UCXXEXPORT void vector<float, allocator<float> >::resize(size_type sz, const float & c);
 	template _UCXXEXPORT void vector<double, allocator<double> >::resize(size_type sz, const double & c);
-	template _UCXXEXPORT void vector<bool, allocator<bool> >::resize(size_type sz, const bool & c);
 
 #elif defined __UCLIBCXX_EXPAND_STRING_CHAR__
 
