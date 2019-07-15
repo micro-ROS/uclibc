@@ -278,45 +278,6 @@ if [ -d "${uclibc_incdir}" ]; then
   exit 1
 fi
 
-# Licensing
-
-echo "You are about to install the uClibc++ library into the NuttX source"
-echo "tree.  NuttX is licensed under the permissive, modified BSD License; uClibc++"
-echo "is licensed under the GNU LGPL Version 3 license.  When you install"
-echo "uClibc++ into the NuttX source tree, you must then comply with all aspects"
-echo "of uClibc++'s stricter GNU LGPL Version 3 license."
-echo ""
-
-readyn "Continue" "N"
-echo ""
-
-if [ "X${ans}" != "Xy" -a "X${ans}" != "XY" ]; then
-  echo "Good bye"
-  exit 0
-fi
-
-echo "You must read and agree to the following license"
-echo ""
-
-readyn "Continue" "N"
-echo ""
-
-if [ "X${ans}" != "Xy" -a "X${ans}" != "XY" ]; then
-  echo "Good bye"
-  exit 0
-fi
-
-echo -e ${lgpl} | more
-echo ""
-
-readyn "I agree to the terms of the GNU LGPL Version 3 license" "N"
-echo ""
-
-if [ "X${ans}" != "Xy" -a "X${ans}" != "XY" ]; then
-  echo "Good bye"
-  exit 0
-fi
-
 echo "Installing uClibc++ in the NuttX source tree"
 
 filelist=`find libxx -type f`
